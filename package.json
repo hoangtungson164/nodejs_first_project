@@ -5,9 +5,11 @@
         "start": "node config/server.js"
     },
     "dependencies": {
+        "bcrypt": "^3.0.7",
         "body-parser": "^1.19.0",
         "cors": "^2.8.5",
         "express": "^4.16.4",
-        "mysql": "^2.17.1"
+        "mysql": "^2.17.1",
+        "sequelize": "^5.21.3"
     }
 }
