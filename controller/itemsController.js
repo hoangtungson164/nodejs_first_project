@@ -12,7 +12,7 @@ router.get('/', function (req, res) {
 })
 
 router.get('/:id', function (req, res) {
-    var sql = "SELECT id, name FROM new_table WHERE id = " + req.params.id;
+    var sql = "SELECT * FROM new_table WHERE id = " + req.params.id;
     con.query(sql, function (err, result) {
         if (err) throw err;
         console.log("Success get one object");
@@ -21,7 +21,8 @@ router.get('/:id', function (req, res) {
 })
 
 router.post('/', function (req, res) {
-    var sql = "INSERT INTO new_table (id, name) VALUES ('" + req.body.id + "', '" + req.body.name + "')";
+    var sql = "INSERT INTO new_table (name, hobby, job, country) VALUES ('"
+     + req.body.name + "','" + req.body.hobby + "', '" + req.body.job + "', '" + req.body.country + "')";
     con.query(sql, function (err, result) {
         if (err) throw err;
         console.log("Success create new row");
@@ -30,7 +31,12 @@ router.post('/', function (req, res) {
 })
 
 router.put('/:id', function(req, res) {
-    var sql = "UPDATE new_table SET name = " + "'" + req.body.name + "'" + " WHERE id = " + req.params.id;
+    var sql = "UPDATE new_table SET name = " 
+    + "'" + req.body.name + "', hobby = "
+    + "'" + req.body.hobby + "', job = "
+    + "'" + req.body.job + "', country = "
+    + "'" + req.body.country + "'"
+    + " WHERE id = " + req.params.id;
     con.query(sql, function (err, result) {
         if (err) throw err;
         console.log("Success update row");

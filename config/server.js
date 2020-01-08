@@ -1,7 +1,7 @@
 const http = require('http');
 const express = require('express');
 const itemsRouter = require('../controller/itemsController.js');
-const loginRouter = require('./controller/userController.js');
+const loginRouter = require('../controller/userController.js');
 const app = express();
 const cors = require('cors');
 
